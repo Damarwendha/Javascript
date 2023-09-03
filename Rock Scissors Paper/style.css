@@ -27,6 +27,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 40px;
 }
 .title-text{
   font-size: 20px;
@@ -50,35 +51,16 @@ img{
   border: 1px solid white;
   cursor: pointer;
 }
-.js-compare-you{
+.js-compare-you, .js-compare-youu, .js-compare-youuu{
   position: absolute;
   top: 70px;
   left: 45px;
 }
-.js-compare-computer{
+.js-compare-computer, .js-compare-computerr, .js-compare-computerrr{
   position: absolute;
   top: -40px;
   left: 25px;
-}
-.js-compare-youu{
-  position: absolute;
-  top: 70px;
-  left: 45px;
-}
-.js-compare-computerr{
-  position: absolute;
-  top: -40px;
-  left: 25px;
-}
-.js-compare-youuu{
-  position: absolute;
-  top: 70px;
-  left: 45px;
-}
-.js-compare-computerrr{
-  position: absolute;
-  top: -40px;
-  left: 25px;
+  color: #bbbbbb;
 }
 .bottom-top-container{
   display: flex;
@@ -88,4 +70,41 @@ img{
 .js-result{
   margin-top: 80px;
   font-size: 30px;
+}
+.reset-button{
+  padding: 6px 20px;
+  background-color: #9c9c9c;
+  border: 0px solid red;
+  border-radius: 15px;
+  color: rgb(61, 61, 61);
+  cursor: pointer;
+  transition: all 0.1s;
+  margin-bottom: 6px;
+}
+.reset-button:hover{
+  background-color: #888888;
+}
+.reset-button:active{
+  padding: 6px 18px;
+  margin-bottom: 7px;
+  font-size: 12px;
+  background-color: #7a7a7a;
+}
+.auto-button{
+  padding: 6px 20px;
+  background-color: #ffbb00;
+  border: 0px solid red;
+  border-radius: 15px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: all 0.1s;
+  margin-bottom: 6px;
+}
+.auto-button:hover{
+  background-color: #e7aa00;
+}
+.auto-button:active{
+  padding: 6px 18px;
+  font-size: 12px;
+  background-color: #cf9800;
 }
