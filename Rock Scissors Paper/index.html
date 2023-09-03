@@ -7,7 +7,7 @@
   <title>JS</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
+  
 <body>
   <div class="all-container">
     <div class="top-container">
@@ -47,7 +47,6 @@
           <p class="js-compare-youuu" onclick=""></p>
           <p class="js-compare-computerrr" onclick=""></p>
         </div>
-
       </div>
       <div class="bottom-top-container">
         <p class="js-result" onclick="
@@ -56,19 +55,18 @@
     </div>
     <div class="bottom-container">
       <p class="js-score" onclick=""></p>
-      <button onclick="
+      <button class="reset-button" onclick="
         document.querySelector('.js-score')
             .innerHTML = `Win: ${scoreGame.win = 0} , Losses: ${scoreGame.lose = 0}, Ties: ${scoreGame.tie = 0}`;
-    
         localStorage.setItem('scoreGame', JSON.stringify(scoreGame));
       ">Reset Score</button>
+      <button class="auto-button" onclick="
+      clickAuto();
+      ">
+        Autoplay
+      </button>
     </div>
   </div>
-
-
-
-
   <script src="main.js"></script>
 </body>
-
 </html>
