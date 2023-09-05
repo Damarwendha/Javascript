@@ -1,18 +1,32 @@
 let scoreGame = JSON.parse(localStorage.getItem('scoreGame'));
 
+const resetButton = document.querySelector('.reset-button');
+const autoButton = document.querySelector('.auto-button');
+const scoreText = document.querySelector('.js-score');
+const resetConf = document.querySelector('.reset-confirm');
+const resetConfYes = document.querySelector('.reset-confirm-button');
+const resetConfNo = document.querySelector('.reset-confirm2-button');
+
 if (!scoreGame) {
   scoreGame = {
     win: 0,
     lose: 0,
     tie: 0
-  };
+  }
 }
 
-document.querySelector('.js-score')
-  .innerHTML = `Win: ${scoreGame.win} , Losses: ${scoreGame.lose}, Ties: ${scoreGame.tie}`;
+
+scoreText.innerHTML = `Win: ${scoreGame.win} , Losses: ${scoreGame.lose}, Ties: ${scoreGame.tie}`;
 
 let computerMove = '';
 let autoPlayIs = 'OFF';
+
+function main(string) {
+  computerMove = overComputerMove();
+  result = pickResult(string)
+  addScore();
+  youComputer(string);
+}
 
 function clickAuto() {
   if (autoPlayIs === 'OFF') {
@@ -25,6 +39,7 @@ function clickAuto() {
       .innerHTML = 'Autoplay';
   }
 }
+
 
 function autoPlay() {
   const myInterval = setInterval(function () {
@@ -114,23 +129,40 @@ function autoPlayResult() {
   return result;
 };
 
-function pickResult(rock, scissors, paper, youPicked) {
+function pickResult(string) {
   let result = '';
+  let messages = {
+    win: 'You win!',
+    lose: 'You lose...',
+    tie: 'Tie.'
+  }
+  let { win, lose, tie } = messages;
 
-  if (computerMove === 'rock') {
-    result = rock
+  if (string === computerMove) {
+    result = tie
+  } else if (string === 'rock' && computerMove === 'paper') {
+    result = lose;
   }
-  else if (computerMove === 'scissors') {
-    result = scissors
+  else if (string === 'rock' && computerMove === 'scissors') {
+    result = win;
   }
-  else {
-    result = paper
+  else if (string === 'paper' && computerMove === 'rock') {
+    result = win;
+  }
+  else if (string === 'paper' && computerMove === 'scissors') {
+    result = lose;
+  }
+  else if (string === 'scissors' && computerMove === 'rock') {
+    result = lose;
+  }
+  else if (string === 'scissors' && computerMove === 'paper') {
+    result = win;
   }
   return result;
 }
 
 
-function addScore(playerPicked) {
+function addScore() {
   if (result === 'Tie.') {
     scoreGame.tie += 1;
   }
@@ -146,10 +178,7 @@ function addScore(playerPicked) {
 
   document.querySelector('.js-score')
     .innerHTML = `Win: ${scoreGame.win} , Losses: ${scoreGame.lose}, Ties: ${scoreGame.tie}`;
-
-
   localStorage.setItem('scoreGame', JSON.stringify(scoreGame));
-
 }
 
 function youComputer(picked) {
@@ -159,8 +188,6 @@ function youComputer(picked) {
   const aiRock = document.querySelector('.js-compare-computer');
   const aiScissors = document.querySelector('.js-compare-computerr');
   const aiPaper = document.querySelector('.js-compare-computerrr');
-
-
 
   if (picked === 'rock') {
     pickedRock.innerHTML = `You`;
@@ -178,7 +205,6 @@ function youComputer(picked) {
     pickedPaper.innerHTML = `You`;
     pickedScissors.innerHTML = ``;
     pickedRock.innerHTML = ``;
-
   }
 
   if (computerMove === 'rock') {
@@ -197,3 +223,62 @@ function youComputer(picked) {
     aiPaper.innerHTML = `Computer`;
   }
 }
+
+function resetScore(){
+  scoreGame.win = 0;
+  scoreGame.lose = 0;
+  scoreGame.tie = 0;
+  localStorage.setItem('scoreGame', JSON.stringify(scoreGame));
+  scoreText.innerHTML = `Win: ${scoreGame.win}, Losses: ${scoreGame.lose}, Ties: ${scoreGame.tie}`;
+  resetConf.innerHTML = '';
+}
+
+function eventClick() {
+  resetButton.addEventListener('click', () => {
+    resetConf.innerHTML = `Are you sure you want to reset the score?
+                            <button class="reset-confirm-button" 
+                            onclick="resetScore();">Yes</button> 
+                            <button class="reset-confirm2-button" onclick="resetConf.innerHTML = '';">No</button>`
+  })
+  autoButton.addEventListener('click', () => {
+    clickAuto();
+  })
+}
+eventClick();
+
+
+
+
+
+function eventKeydown() {
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'r') {
+      main('rock');
+    }
+  })
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 's') {
+      main('scissors');
+    }
+  })
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'p') {
+      main('paper');
+    }
+  })
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'a') {
+      clickAuto();
+    }
+  })
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Backspace') {
+      resetConf.innerHTML = `Are you sure you want to reset the score?
+                            <button class="reset-confirm-button" 
+                            onclick="resetScore();">Yes</button>
+                            <button class="reset-confirm2-button" onclick="resetConf.innerHTML = '';">No</button>`
+ 
+    }
+  })
+}
+eventKeydown();
