@@ -108,3 +108,10 @@ img{
   font-size: 12px;
   background-color: #cf9800;
 }
+.reset-confirm-button, .reset-confirm2-button{
+  padding: 6px;
+  margin-left: 5px;
+  border: 0px solid black;
+  border-radius: 2px;
+  cursor: pointer;
+}
