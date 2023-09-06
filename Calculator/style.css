@@ -1,0 +1,28 @@
+body{
+  background-color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+button{
+  background-color: #3d3d3d;
+  padding: 15px;
+  border-radius: 200px;
+  border: 1px solid rgb(51, 51, 51);
+  width: 70px;
+  height: 70px;
+  color: white;
+  font-size: 30px;
+  margin-left: 5px;
+}
+.clear{
+  font-size: 16px;
+}
+.right-button{
+  background-color: #ff7300;
+}
+p{
+  margin: 10px;
+  font-size: 40px;
+}
+.container{
+}
