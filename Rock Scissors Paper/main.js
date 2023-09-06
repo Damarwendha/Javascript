@@ -1,4 +1,8 @@
-let scoreGame = JSON.parse(localStorage.getItem('scoreGame'));
+let scoreGame = JSON.parse(localStorage.getItem('scoreGame')) || {
+  win: 0,
+  lose: 0,
+  tie: 0
+};
 
 const resetButton = document.querySelector('.reset-button');
 const autoButton = document.querySelector('.auto-button');
@@ -6,14 +10,6 @@ const scoreText = document.querySelector('.js-score');
 const resetConf = document.querySelector('.reset-confirm');
 const resetConfYes = document.querySelector('.reset-confirm-button');
 const resetConfNo = document.querySelector('.reset-confirm2-button');
-
-if (!scoreGame) {
-  scoreGame = {
-    win: 0,
-    lose: 0,
-    tie: 0
-  }
-}
 
 
 scoreText.innerHTML = `Win: ${scoreGame.win} , Losses: ${scoreGame.lose}, Ties: ${scoreGame.tie}`;
