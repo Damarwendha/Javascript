@@ -7,10 +7,17 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 50px 200px 150px 100px ;
+  grid-template-columns: 50px 450px ;
   row-gap: 10px;
   column-gap: 5px;
   margin-top: 20px;
+}
+form{
+  display: grid;
+  grid-template-columns: 200px 150px 100px ;
+  row-gap: 10px;
+  column-gap: 5px;
+  
 }
 
 .output {
