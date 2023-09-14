@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-</head>
+  <body>
+    <p class="font-weight-bold">
+      <img src="img/channels4_profile.jpg" alt="" />
+      My To-Do List
+    </p>
+    <div class="grid-container">
+      <div class="finish-text">Complete</div>
+      <form onsubmit="event.preventDefault(); addTodo()">
+        <input class="form-control inputBox-js" type="text" placeholder="Enter" required/>
+        <input type="date" class="form-control dueDate-js" required />
+        <button type="submit" class="btn btn-success">
+          ADD
+        </button>
+      </form>
 
-<body>
-  <p class="font-weight-bold">
-    <img src="img/channels4_profile.jpg" alt="">
-    My To-Do List </p>
-  <div class="grid-container">
-    <div class="finish-text">Complete</div>
-    <input class="form-control inputBox-js" type="text" placeholder="Enter">
-    <input type="date" class="form-control dueDate-js">
-    <button type="button" class="btn btn-success" onclick="
-    checkIfEmpty();
-    ">ADD</button>
-    <div class="output">
-
+      <div class="output"></div>
     </div>
-  </div>
 
-
-
-
-  <script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
