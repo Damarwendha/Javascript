@@ -11,15 +11,22 @@ const checkElem = document.querySelector('.checkbox-js');
 outputElem.innerHTML = '';
 updateOutputHTML();
 
-function buttonTrigger() {
+function checkIfEmpty() {
+  if (inputElem.value === "") return alert("Todo name are required.");
+  else{
+    addTodo();
+  }
+}
+
+function addTodo() {
   const name = inputElem.value;
   const date = dateElem.value;
-  inputElem.value = '';
-  dateElem.value = '';
-  object.push({ name: name, date: date, completed: false }); // Add a completed property
+  inputElem.value = "";
+  dateElem.value = "";
+  object.push({ name: name, date: date, completed: false });
   console.log(object);
   updateOutputHTML();
-  localStorage.setItem('object', JSON.stringify(object));
+  localStorage.setItem("object", JSON.stringify(object));
 }
 
 function deleteOutput(index) {
