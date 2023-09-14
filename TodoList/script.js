@@ -12,7 +12,7 @@ outputElem.innerHTML = '';
 updateOutputHTML();
 
 function checkIfEmpty() {
-  if (inputElem.value === "") return alert("Todo name are required.");
+  if (inputElem.value === "") return alert("Todo name is required.");
   else{
     addTodo();
   }
