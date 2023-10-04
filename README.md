@@ -1,3 +1,15 @@
+# My Notes
+Array Sort Method
+```
+const points = [100, 40, 1, 5, 25, 10];
+points.sort((a, b) => {return a - b});
+// jika hasil return negatif ... a masuk duluan
+// jika hasil return positif ... b masuk duluan
+// hasil return 0 ... Nothing happen
+// parameter berisi a, b yang berarti a value pertama, b value kedua. misal a(100) - b(40) = negatif(a(100) masuk duluan)
+// Jika mau di reverse bisa pakai sort().reverse() atau bisa juga dengan mengubah value compare nya menjadi b - a. misal b(40) - a(100) = positif(b(40) masuk duluan)
+```
+
 # Demo
 <a href="https://rockscissorspaper-seven.vercel.app/"><em>Rock scissor paper</em></a>
 <br>
