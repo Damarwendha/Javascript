@@ -6,8 +6,8 @@ points.sort((a, b) => {return a - b});
 // jika hasil return negatif ... a masuk duluan
 // jika hasil return positif ... b masuk duluan
 // hasil return 0 ... Nothing happen
-// parameter berisi a, b yang berarti a value pertama, b value kedua. misal a(100) - b(40) = negatif(b(40) masuk duluan)
-// Jika mau di reverse bisa pakai sort().reverse() atau bisa juga dengan mengubah value compare nya menjadi b - a. misal b(40) - a(100) = negatif(b(100) masuk duluan)
+// parameter berisi a, b yang berarti a value pertama, b value kedua. misal a(100) - b(40) = positif(b(40) masuk duluan)
+// Jika mau di reverse bisa pakai sort().reverse() atau bisa juga dengan mengubah value compare nya menjadi b - a. misal b(40) - a(100) = negatif(a(100) masuk duluan)
 ```
 
 # Demo
