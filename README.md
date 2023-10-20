@@ -11,10 +11,18 @@ points.sort((a, b) => {return a - b});
 ```
 Array Reduce Method
 ```
+let arrays = [
+   ["1", "2", "3"],
+   [true],
+   [4, 5, 6]
+];
+
 arr.reduce((acc, currentValue) => {
     currentValue.map(value => acc.push(value)) // mengupdate acc harus mereturn acc yang telah diupdate
     return acc // (apapun yang direturn akan menggntikan acc lama menjadi baru)
   }, []) // (this can be str, num, obj, dll. initial value untuk accumulator
+
+console.log(flatten(arrays)); // ["1", "2", "3", true, 4, 5, 6];
 ```
 # Demo
 <a href="https://rockscissorspaper-seven.vercel.app/"><em>Rock scissor paper</em></a>
