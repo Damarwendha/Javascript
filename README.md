@@ -9,7 +9,13 @@ points.sort((a, b) => {return a - b});
 // parameter berisi a, b yang berarti a value pertama, b value kedua. misal a(100) - b(40) = positif(b(40) masuk duluan)
 // Jika mau di reverse bisa pakai sort().reverse() atau bisa juga dengan mengubah value compare nya menjadi b - a. misal b(40) - a(100) = negatif(a(100) masuk duluan)
 ```
-
+Array Reduce Method
+```
+arr.reduce((acc, currentValue) => {
+    currentValue.map(value => acc.push(value)) // mengupdate acc harus mereturn acc yang telah diupdate
+    return acc // (apapun yang direturn akan menggntikan acc lama menjadi baru)
+  }, []) // (this can be str, num, obj, dll. initial value untuk accumulator
+```
 # Demo
 <a href="https://rockscissorspaper-seven.vercel.app/"><em>Rock scissor paper</em></a>
 <br>
